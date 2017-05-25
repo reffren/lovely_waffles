@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/css/site")
+    @Styles.Render("~/Content/css/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("css", false)
+    @RenderSection("Scripts", false)
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row my_navbar">
+                <div class="navbar-header logo">
+                    <a id="logo" href="@Url.Action("Index", "Home")">
+                        <img src="/Content/Images/logo.png" alt="" />
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="menu">
+                        <li>@Html.ActionLink("МЕНЮ", "Index", "Home", new { @class = "nav_letter" })</li>
+                        <li>@Html.ActionLink("ФОТО", "Gallery", "Home", new { @class = "nav_letter" })</li>
+                        <li>@Html.ActionLink("БЛОГ", "Service", "Home", new { @class = "nav_letter" })</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    <hr />
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="inform">
+                        <li><h2>НАШИ КОНТАКТЫ</h2></li>
+                        <li><strong>Наш адрес: </strong>ТЦ "Сувар-Плаза" (Спартаковская, д.6, 1 этаж, у траволатора)</li>
+                        <li><strong>Наш телефон: </strong>89662500201</li>
+                        <li><strong>e-mail: </strong> lovely@mail.ru</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-md-offset-2 ">
+                    <ul class="inform">
+                        <li><h2>МЫ В СОЦСЕТЯХ</h2></li>
+                        <li><strong>Вконакте: </strong>ТЦ "Сувар-Плаза"</li>
+                        <li><strong>Инстаграм: </strong>89662500201</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p>&copy; @DateTime.Now.Year - Lovely вафли</p>
+    </footer>
+</body>
+</html>

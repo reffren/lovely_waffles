@@ -1,0 +1,92 @@
+﻿.my_navbar {
+    background-color: #401F18;
+    height: 150px;
+}
+
+.nav_letter {
+    font-size: x-large;
+    color: white;
+    text-decoration: none;
+}
+
+.my_nav {
+    padding-left: 233px;
+    text-decoration: none;
+}
+
+.logo {
+    padding-left: 30px;
+}
+.menu {
+    float: right;
+    padding-top: 40px;
+}
+
+/*HomeController*/
+.home_descript {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.home_text {
+    font-size: 15pt;
+}
+.home_h2 {
+    font-size: 30pt;
+}
+.inform {
+    font-family: "PTSansRegular",arial,helvetica,sans-serif;
+    list-style-type: none;
+    text-align:left; 
+    color: #FBBA00;
+}
+
+/*UNDERLINE MENU ITEMS*/
+
+ul.menu li {
+    display: inline-block;
+}
+ul.menu li a{
+    position: relative;
+    display: block;
+    margin-right: 1.618em;
+    padding: 15px 0 5px;
+    text-decoration: none;
+    color: #FBBA00;
+    text-transform: uppercase;
+    line-height: 30px;
+    font-weight: 700;
+    font-family: 'RalewayBold', sans-serif;
+}
+ul.menu li a:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background: black;
+    height: 2px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+ul.menu li a:hover:before, ul.menu li a:focus:before, ul.menu li a:active:before {
+  left: 0;
+  right: 0;
+}
+
+footer {
+    background-color: #401F18;
+    text-align: center;
+    padding-top: 70px;
+}
+footer p {
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    color: #FBBA00;
+    padding-top: 40px;
+}
