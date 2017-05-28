@@ -34,5 +34,29 @@ namespace LovelyWaffles.Data.Concrete
             context.Entry(photoCarousel).State = EntityState.Deleted;
             context.SaveChanges();
         }
+
+        public IQueryable<PhotoGallery> PhotoGalleries
+        {
+            get { return context.PhotoGalleries; }
+        }
+
+        public void SavePhoto(PhotoGallery photo)
+        {
+            if (photo.PhotoID == 0)
+            {
+                context.PhotoGalleries.Add(photo);
+            }
+            else
+            {
+                context.Entry(photo).State = EntityState.Modified; // Indicating that the record is changed
+            }
+            context.SaveChanges();
+        }
+
+        public void DeletePhoto(PhotoGallery photo)
+        {
+            context.Entry(photo).State = EntityState.Deleted;
+            context.SaveChanges();
+        }
     }
 }

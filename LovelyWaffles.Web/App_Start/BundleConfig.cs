@@ -15,6 +15,9 @@ namespace LovelyWaffles.Web.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Scripts/jquery-{version}.js"));
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/galleryScript1").Include("~/Scripts/Gallery/jquery.fancybox.js"));
+            bundles.Add(new ScriptBundle("~/bundles/galleryScript2").Include("~/Scripts/Gallery/galleryScript.js"));
         }
     }
 }

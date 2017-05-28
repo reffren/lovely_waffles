@@ -10,5 +10,6 @@ namespace LovelyWaffles.Data.Concrete
     public class EFContext : DbContext
     {
         public DbSet<PhotoCarousel> PhotoCarousels { get; set; }
+        public DbSet<PhotoGallery> PhotoGalleries { get; set; }
     }
 }

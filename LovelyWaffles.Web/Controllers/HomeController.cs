@@ -20,5 +20,10 @@ namespace LovelyWaffles.Web.Controllers
         {
             return View(_repository.PhotoCarousels.ToList());
         }
+
+        public ActionResult Gallery()
+        {
+            return View(_repository.PhotoGalleries.ToList());
+        }
 	}
 }

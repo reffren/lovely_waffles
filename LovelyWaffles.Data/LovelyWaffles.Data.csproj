@@ -89,6 +89,16 @@
     <Compile Include="Concrete\EFContext.cs" />
     <Compile Include="Concrete\Repository.cs" />
     <Compile Include="Entities\PhotoCarousel.cs" />
+    <Compile Include="Entities\PhotoGallery.cs" />
+    <Compile Include="Migrations\201704231839407_InitialCreate.cs" />
+    <Compile Include="Migrations\201704231839407_InitialCreate.Designer.cs">
+      <DependentUpon>201704231839407_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705271042375_AddTable.cs" />
+    <Compile Include="Migrations\201705271042375_AddTable.Designer.cs">
+      <DependentUpon>201705271042375_AddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -102,7 +112,14 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704231839407_InitialCreate.resx">
+      <DependentUpon>201704231839407_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705271042375_AddTable.resx">
+      <DependentUpon>201705271042375_AddTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

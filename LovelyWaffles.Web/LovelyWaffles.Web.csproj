@@ -115,9 +115,24 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CarouselImages\1.jpg" />
+    <Content Include="Content\GalleryStyle\fancybox.css" />
     <Content Include="Content\Images\2.jpg" />
     <Content Include="Content\Images\34.jpg" />
+    <Content Include="Content\GalleryStyle\blank.gif" />
+    <Content Include="Content\GalleryStyle\fancybox_loading%402x.gif" />
+    <Content Include="Content\GalleryStyle\fancybox_loading.gif" />
+    <Content Include="Content\GalleryStyle\fancybox_overlay.png" />
+    <Content Include="Content\GalleryStyle\fancybox_sprite%402x.png" />
+    <Content Include="Content\GalleryStyle\fancybox_sprite.png" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\GalleryPhoto\1.jpg" />
+    <Content Include="Content\GalleryPhoto\2.jpg" />
+    <Content Include="Content\GalleryPhoto\3.jpg" />
+    <Content Include="Content\GalleryPhoto\4.jpg" />
+    <Content Include="Content\GalleryPhoto\5.jpg" />
+    <Content Include="Content\GalleryPhoto\6.jpg" />
+    <Content Include="Content\GalleryPhoto\7.jpg" />
+    <Content Include="Content\GalleryPhoto\8.jpg" />
     <Content Include="Content\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -133,6 +148,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\waffles.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\Gallery\galleryScript.js" />
+    <Content Include="Scripts\Gallery\jquery.fancybox.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -152,16 +169,20 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Identity\MachineKeyProtectionProvider.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

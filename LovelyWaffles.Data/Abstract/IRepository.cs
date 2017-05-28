@@ -12,5 +12,9 @@ namespace LovelyWaffles.Data.Abstract
         IQueryable<PhotoCarousel> PhotoCarousels { get; }
         void SavePhotoCarousel(PhotoCarousel photoCarousel);
         void DeletePhotoCarousel(PhotoCarousel photoCarousel);
+
+        IQueryable<PhotoGallery> PhotoGalleries { get; }
+        void SavePhoto(PhotoGallery photo);
+        void DeletePhoto(PhotoGallery photo);
     }
 }
