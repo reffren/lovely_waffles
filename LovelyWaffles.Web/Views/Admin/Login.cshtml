@@ -1,0 +1,15 @@
+﻿@model LovelyWaffles.Web.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+@using (Html.BeginForm(null, null, new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)<br />
+    @Html.TextBoxFor(m => m.UserName, new { placeholder = Html.DisplayNameFor(m => m.UserName) })<br />
+    @Html.PasswordFor(m => m.Password, new { placeholder = Html.DisplayNameFor(m => m.Password) })<br />
+    @Html.CheckBoxFor(m => m.RememberMe)
+    @Html.DisplayNameFor(m => m.RememberMe)<br />
+    <button type="submit">Войти</button>
+}
+
