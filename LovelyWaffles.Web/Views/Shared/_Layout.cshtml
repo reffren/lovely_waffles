@@ -25,6 +25,13 @@
                         <li>@Html.ActionLink("МЕНЮ", "Index", "Home", new { @class = "nav_letter" })</li>
                         <li>@Html.ActionLink("ФОТО", "Gallery", "Home", new { @class = "nav_letter" })</li>
                         <li>@Html.ActionLink("БЛОГ", "Service", "Home", new { @class = "nav_letter" })</li>
+                        @if (Request.IsAuthenticated)
+                        {
+                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logout" }))
+                            {
+                                <li>@Html.ActionLink("Выйти", "Logout", "Admin", new { @class = "nav_exit" })</li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
