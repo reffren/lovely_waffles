@@ -124,6 +124,7 @@
     <Content Include="Content\GalleryStyle\fancybox_overlay.png" />
     <Content Include="Content\GalleryStyle\fancybox_sprite%402x.png" />
     <Content Include="Content\GalleryStyle\fancybox_sprite.png" />
+    <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\GalleryPhoto\1.jpg" />
     <Content Include="Content\GalleryPhoto\2.jpg" />
@@ -185,6 +186,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\Logout.cshtml" />
+    <Content Include="Views\Shared\_Pictures.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

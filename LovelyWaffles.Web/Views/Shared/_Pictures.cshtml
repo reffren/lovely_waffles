@@ -1,0 +1,22 @@
+﻿@model IEnumerable<LovelyWaffles.Data.Entities.PhotoGallery>
+
+@using System.Drawing
+    @for (int i = 0; i < Model.Count(); i++)
+    {
+        if (i % 3 == 0)
+        {
+            @:<div class="row img_row">
+        }
+        <div>
+            <a class="fancybox col-sm-4" rel="gallery1" href="@Url.Content(Model.ElementAt(i).Photo)" title=@Model.ElementAt(i).Title>
+                <img width="350" height="350" src="@Url.Content(Model.ElementAt(i).Photo)" class="img-responsive img_gallery" alt=" " />
+            </a>
+        </div>
+        if ((i + 1) % 3 == 0)
+        {
+
+            @:</div>
+        }
+
+    }
+</div>

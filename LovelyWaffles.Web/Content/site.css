@@ -10,6 +10,7 @@
 
 .logo {
     padding-left: 30px;
+    padding-bottom: 20px;
 }
 .menu {
     float: right;
@@ -30,7 +31,7 @@
 #logout li a{
     color: red;
 }
-flo
+
 /*HomeController*/
 .home_descript {
     padding-top: 20px;
@@ -50,6 +51,11 @@ flo
 }
 .img_gallery {
     padding-bottom: 30px;
+}
+#loading p img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
 
 /*UNDERLINE MENU ITEMS*/
