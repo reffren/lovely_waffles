@@ -29,3 +29,6 @@ c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.D
 C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.InitialCreate.resources
 C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.csproj.GenerateResource.Cache
 C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.AddTable.resources
+C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.ChangeDb.resources
+C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.AddHead.resources
+C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.AddDescription.resources

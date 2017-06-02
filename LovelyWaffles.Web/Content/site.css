@@ -18,12 +18,13 @@
 }
 .nav_letter {
     font-size: x-large;
-    color: white;
     text-decoration: none;
+    color: #FBBA00;
 }
 .nav_exit {
     font-size: x-large;
     text-decoration: none;
+    color: #FBBA00;
 }
 #logout {
    display: inline-block;
@@ -58,6 +59,9 @@
 	display: block;
 }
 
+.li_inline {
+    display: inline-block;
+}
 /*UNDERLINE MENU ITEMS*/
 
 ul.menu li {
@@ -69,7 +73,6 @@ ul.menu li a{
     margin-right: 1.618em;
     padding: 15px 0 5px;
     text-decoration: none;
-    color: #FBBA00;
     text-transform: uppercase;
     line-height: 30px;
     font-weight: 700;
@@ -78,11 +81,11 @@ ul.menu li a{
 ul.menu li a:before {
     content: "";
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     left: 50%;
     right: 50%;
     bottom: 0;
-    background: black;
+    background: #d6a604;
     height: 2px;
     -webkit-transition-property: left, right;
     transition-property: left, right;
@@ -96,11 +99,32 @@ ul.menu li a:hover:before, ul.menu li a:focus:before, ul.menu li a:active:before
   left: 0;
   right: 0;
 }
-
+ul.menu li a:hover {
+    color: #d6a604;
+}
 /*Admin*/
 .entrance {
     width: 500px;
     padding-left: 20px;
+}
+/*AdminMenu*/
+
+ul.admin_menu {
+  left: 0;
+  right: 0;
+  padding-bottom: 40px;
+}
+ul.admin_menu li {
+    display: inline-block;
+}
+/*EditPhotoGallery*/
+
+.add_photo {
+    padding-top: 30px;
+    padding-bottom:40px;
+}
+.img_row {
+    margin-bottom: 30px;
 }
 
 footer {

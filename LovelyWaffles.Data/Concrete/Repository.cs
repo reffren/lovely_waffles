@@ -11,27 +11,52 @@ namespace LovelyWaffles.Data.Concrete
     public class Repository : IRepository
     {
         private EFContext context = new EFContext();
-        public IQueryable<PhotoCarousel> PhotoCarousels
+
+        public IQueryable<IndexPage> IndexPages
         {
-            get { return context.PhotoCarousels; }
+            get { return context.IndexPages; }
         }
 
-        public void SavePhotoCarousel(PhotoCarousel photoCarousel)
+        public void SavePhotoCarousel(IndexPage indexPage)
         {
-            if (photoCarousel.PhotoCarouselID == 0)
+            if (indexPage.IndexPageID == 0)
             {
-                context.PhotoCarousels.Add(photoCarousel);
+                context.IndexPages.Add(indexPage);
             }
             else
             {
-                context.Entry(photoCarousel).State = EntityState.Modified;
+                context.Entry(indexPage).State = EntityState.Modified;
             }
             context.SaveChanges();
         }
 
-        public void DeletePhotoCarousel(PhotoCarousel photoCarousel)
+        public void DeletePhotoCarousel(IndexPage indexPage)
         {
-            context.Entry(photoCarousel).State = EntityState.Deleted;
+            context.Entry(indexPage).State = EntityState.Deleted;
+            context.SaveChanges();
+        }
+
+        public IQueryable<Image> Images
+        {
+            get { return context.Images; }
+        }
+
+        public void SavePhotoCarousel(Image image)
+        {
+            if (image.ImageID == 0)
+            {
+                context.Images.Add(image);
+            }
+            else
+            {
+                context.Entry(image).State = EntityState.Modified;
+            }
+            context.SaveChanges();
+        }
+
+        public void DeletePhotoCarousel(Image image)
+        {
+            context.Entry(image).State = EntityState.Deleted;
             context.SaveChanges();
         }
 

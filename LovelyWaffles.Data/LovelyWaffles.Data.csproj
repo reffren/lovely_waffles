@@ -88,7 +88,8 @@
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\EFContext.cs" />
     <Compile Include="Concrete\Repository.cs" />
-    <Compile Include="Entities\PhotoCarousel.cs" />
+    <Compile Include="Entities\Image.cs" />
+    <Compile Include="Entities\IndexPage.cs" />
     <Compile Include="Entities\PhotoGallery.cs" />
     <Compile Include="Migrations\201704231839407_InitialCreate.cs" />
     <Compile Include="Migrations\201704231839407_InitialCreate.Designer.cs">
@@ -97,6 +98,18 @@
     <Compile Include="Migrations\201705271042375_AddTable.cs" />
     <Compile Include="Migrations\201705271042375_AddTable.Designer.cs">
       <DependentUpon>201705271042375_AddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706021332102_ChangeDb.cs" />
+    <Compile Include="Migrations\201706021332102_ChangeDb.Designer.cs">
+      <DependentUpon>201706021332102_ChangeDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706021336422_AddHead.cs" />
+    <Compile Include="Migrations\201706021336422_AddHead.Designer.cs">
+      <DependentUpon>201706021336422_AddHead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706021604324_AddDescription.cs" />
+    <Compile Include="Migrations\201706021604324_AddDescription.Designer.cs">
+      <DependentUpon>201706021604324_AddDescription.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,6 +131,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705271042375_AddTable.resx">
       <DependentUpon>201705271042375_AddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706021332102_ChangeDb.resx">
+      <DependentUpon>201706021332102_ChangeDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706021336422_AddHead.resx">
+      <DependentUpon>201706021336422_AddHead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706021604324_AddDescription.resx">
+      <DependentUpon>201706021604324_AddDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

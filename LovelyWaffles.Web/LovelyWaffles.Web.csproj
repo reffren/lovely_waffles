@@ -117,13 +117,14 @@
     <Content Include="Content\CarouselImages\1.jpg" />
     <Content Include="Content\GalleryStyle\fancybox.css" />
     <Content Include="Content\Images\2.jpg" />
-    <Content Include="Content\Images\34.jpg" />
+    <Content Include="Content\Images\pic4.jpg" />
     <Content Include="Content\GalleryStyle\blank.gif" />
     <Content Include="Content\GalleryStyle\fancybox_loading%402x.gif" />
     <Content Include="Content\GalleryStyle\fancybox_loading.gif" />
     <Content Include="Content\GalleryStyle\fancybox_overlay.png" />
     <Content Include="Content\GalleryStyle\fancybox_sprite%402x.png" />
     <Content Include="Content\GalleryStyle\fancybox_sprite.png" />
+    <Content Include="Content\Images\inst.png" />
     <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\GalleryPhoto\1.jpg" />
@@ -134,6 +135,7 @@
     <Content Include="Content\GalleryPhoto\6.jpg" />
     <Content Include="Content\GalleryPhoto\7.jpg" />
     <Content Include="Content\GalleryPhoto\8.jpg" />
+    <Content Include="Content\Images\vk.png" />
     <Content Include="Content\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -187,6 +189,11 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\Logout.cshtml" />
     <Content Include="Views\Shared\_Pictures.cshtml" />
+    <Content Include="Views\Shared\AdminMenu.cshtml" />
+    <Content Include="Views\Admin\EditPhotoGallery.cshtml" />
+    <Content Include="Views\Shared\_CarouselTop.cshtml" />
+    <Content Include="Views\Shared\_CarouselDown.cshtml" />
+    <Content Include="Views\Shared\_Info.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

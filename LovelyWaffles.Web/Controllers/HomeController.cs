@@ -11,7 +11,7 @@ namespace LovelyWaffles.Web.Controllers
     public class HomeController : Controller
     {
         private IRepository _repository;
-        const int picuresPerPage = 9;
+        const int picturesPerPage = 9;
 
         public HomeController(IRepository repository)
         {
@@ -19,7 +19,7 @@ namespace LovelyWaffles.Web.Controllers
         }
         public ActionResult Index()
         {
-            return View(_repository.PhotoCarousels.ToList());
+            return View(_repository.IndexPages.FirstOrDefault(f => f.IndexPageID != 0));
         }
 
         public ActionResult Gallery(int? id)
@@ -31,19 +31,16 @@ namespace LovelyWaffles.Web.Controllers
                 return PartialView("_Pictures", GetPaginatedPictures(page));
             }
 
-            return View("Gallery", _repository.PhotoGalleries.Where(x => x.Photo != null).Take(picuresPerPage));
+            return View("Gallery", _repository.PhotoGalleries.Where(x => x.Photo != null).OrderByDescending(o => o.PhotoID).Take(picturesPerPage));
         }
 
         private List<PhotoGallery> GetPaginatedPictures(int page = 1)
         {
-            var skipPictures = page * picuresPerPage;
+            var skipPictures = page * picturesPerPage;
 
-            var listOfProducts = _repository.PhotoGalleries.Where(x => x.Photo != null);
+            var listOfProducts = _repository.PhotoGalleries.Where(x => x.Photo != null).OrderByDescending(o => o.PhotoID);
 
-            return listOfProducts.
-                OrderBy(x => x.Photo).
-                Skip(skipPictures).
-                Take(picuresPerPage).ToList();
+            return listOfProducts.Skip(skipPictures).Take(picturesPerPage).ToList();
         }
 	}
 }
