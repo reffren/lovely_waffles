@@ -9,7 +9,8 @@ namespace LovelyWaffles.Data.Concrete
 {
     public class EFContext : DbContext
     {
-        public DbSet<IndexPage> IndexPages { get; set; }
+        public DbSet<Description> Descriptions { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<PhotoGallery> PhotoGalleries { get; set; }
     }

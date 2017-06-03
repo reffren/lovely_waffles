@@ -1,0 +1,22 @@
+﻿@model LovelyWaffles.Data.Entities.Contact
+
+@{
+    ViewBag.Title = "Редактировать текст главной страницы";
+}
+@Html.Partial("AdminMenu")
+
+@using (Html.BeginForm("EditText", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inline" }))
+{
+    <div class="container">
+        <div class="row img_gallery">
+            <h2>НАШИ КОНТАКТЫ</h2>
+            <strong>Наш адрес</strong>
+            <p>@Html.TextBoxFor(m => m.Address, new { @class = "wide" })</p>
+            <strong>Наш телефон</strong>
+            <p>@Html.TextBoxFor(m => m.Phone, new { @class = "wide" })</p>
+            <strong>e-mail</strong>
+            <p>@Html.TextBoxFor(m => m.Email, new { @class = "wide " })</p>
+        </div>
+        <input type="submit" class="btn btn-success" value="Редактировать">
+    </div>
+}

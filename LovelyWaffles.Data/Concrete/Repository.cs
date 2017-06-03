@@ -12,28 +12,32 @@ namespace LovelyWaffles.Data.Concrete
     {
         private EFContext context = new EFContext();
 
-        public IQueryable<IndexPage> IndexPages
+        public IQueryable<Description> Descriptions
         {
-            get { return context.IndexPages; }
+            get { return context.Descriptions; }
         }
 
-        public void SavePhotoCarousel(IndexPage indexPage)
+        public void SaveIndexPage(Description description)
         {
-            if (indexPage.IndexPageID == 0)
+            if (description.DescriptionID != 0)
             {
-                context.IndexPages.Add(indexPage);
+                context.Entry(description).State = EntityState.Modified;
+                context.SaveChanges();
             }
-            else
-            {
-                context.Entry(indexPage).State = EntityState.Modified;
-            }
-            context.SaveChanges();
         }
 
-        public void DeletePhotoCarousel(IndexPage indexPage)
+        public IQueryable<Contact> Contacts
         {
-            context.Entry(indexPage).State = EntityState.Deleted;
-            context.SaveChanges();
+            get { return context.Contacts; }
+        }
+
+        public void SaveContacts(Contact contact)
+        {
+            if (contact.ContactID != 0)
+            {
+                context.Entry(contact).State = EntityState.Modified;
+                context.SaveChanges();
+            }
         }
 
         public IQueryable<Image> Images

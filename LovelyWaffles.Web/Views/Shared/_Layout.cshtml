@@ -39,7 +39,7 @@
     @RenderBody()
     <hr />
     <footer>
-        @Html.Partial("_Info")
+        @{Html.RenderAction("Contacts", "Contact");}
         <p>&copy; @DateTime.Now.Year - Lovely вафли</p>
     </footer>
 </body>

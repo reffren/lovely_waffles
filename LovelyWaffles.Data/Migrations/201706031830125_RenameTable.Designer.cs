@@ -7,13 +7,13 @@ namespace LovelyWaffles.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddTable : IMigrationMetadata
+    public sealed partial class RenameTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RenameTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705271042375_AddTable"; }
+            get { return "201706031830125_RenameTable"; }
         }
         
         string IMigrationMetadata.Source

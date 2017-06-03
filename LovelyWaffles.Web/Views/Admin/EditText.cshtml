@@ -1,0 +1,32 @@
+﻿@model LovelyWaffles.Data.Entities.Description
+
+@{
+    ViewBag.Title = "Редактировать текст главной страницы";
+}
+@Html.Partial("AdminMenu")
+
+@using (Html.BeginForm("EditText", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inline" }))
+{
+    <div class="container center">
+        <div class="row">
+            @Html.HiddenFor(m => m.DescriptionID)
+            <h3>@Html.TextBoxFor(m => m.HeadDescription1, new { @class = "wide" })</h3>
+            <p>@Html.TextAreaFor(m => m.Description1, new { @class = "wide", rows = 6 })</p>
+        </div>
+        <div class="row">
+            <h3>@Html.TextBoxFor(m => m.HeadDescription2, new { @class = "wide" })</h3>
+            <p>@Html.TextAreaFor(m => m.Description2, new { @class = "wide", rows = 6 })</p>
+        </div>
+        <div class="row">
+            <h3>@Html.TextBoxFor(m => m.HeadDescription3, new { @class = "wide" })</h3>
+            <p>@Html.TextAreaFor(m => m.Description3, new { @class = "wide", rows = 6 })</p>
+        </div>
+        <div class="row">
+            <h3>@Html.TextBoxFor(m => m.HeadDescription4, new { @class = "wide" })</h3>
+            <p>@Html.TextAreaFor(m => m.Description4, new { @class = "wide", rows = 6 })</p>
+        </div>
+        <input type="submit" class="btn btn-success" value="Редактировать">
+    </div>
+}
+
+

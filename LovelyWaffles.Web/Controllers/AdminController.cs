@@ -14,6 +14,7 @@ namespace LovelyWaffles.Web.Controllers
     public class AdminController : Controller
     {
         private IRepository _repository;
+        private IndexModel indexModel;
 
         public AdminController(IRepository repository)
         {
@@ -23,7 +24,11 @@ namespace LovelyWaffles.Web.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View(_repository.IndexPages.FirstOrDefault(f => f.IndexPageID != 0));
+            indexModel = new IndexModel()
+            {
+                Images = _repository.Images.ToList()
+            };
+            return View(indexModel);
         }
 
         public ActionResult EditPhotoGallery()
@@ -57,6 +62,38 @@ namespace LovelyWaffles.Web.Controllers
                 }
             }
             return RedirectToAction("EditPhotoGallery", "Admin");
+        }
+
+        [Authorize]
+        public ActionResult EditText()
+        {
+            return View(_repository.Descriptions.FirstOrDefault(f => f.DescriptionID != 0));
+        }
+
+        [HttpPost]
+        public ActionResult EditText(Description model)
+        {
+            if (ModelState.IsValid)
+            {
+                _repository.SaveIndexPage(model);
+            }
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult EditContacts()
+        {
+            return View(_repository.Contacts.FirstOrDefault(f => f.ContactID != 0));
+        }
+
+        [HttpPost]
+        public ActionResult EditContacts(Contact contact)
+        {
+            if (ModelState.IsValid)
+            {
+                _repository.SaveContacts(contact);
+            }
+            return View();
         }
 
         [AllowAnonymous]

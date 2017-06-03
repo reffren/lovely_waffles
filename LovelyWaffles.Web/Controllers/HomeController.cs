@@ -1,5 +1,6 @@
 ﻿using LovelyWaffles.Data.Abstract;
 using LovelyWaffles.Data.Entities;
+using LovelyWaffles.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace LovelyWaffles.Web.Controllers
     public class HomeController : Controller
     {
         private IRepository _repository;
+        private IndexModel indexModel;
         const int picturesPerPage = 9;
 
         public HomeController(IRepository repository)
@@ -19,7 +21,12 @@ namespace LovelyWaffles.Web.Controllers
         }
         public ActionResult Index()
         {
-            return View(_repository.IndexPages.FirstOrDefault(f => f.IndexPageID != 0));
+            indexModel = new IndexModel()
+            {
+                Description = _repository.Descriptions.FirstOrDefault(f => f.DescriptionID != 0),
+                Images = _repository.Images.ToList()
+            };
+            return View(indexModel);
         }
 
         public ActionResult Gallery(int? id)

@@ -9,9 +9,11 @@ namespace LovelyWaffles.Data.Abstract
 {
     public interface IRepository
     {
-        IQueryable<IndexPage> IndexPages { get; }
-        void SavePhotoCarousel(IndexPage indexPage);
-        void DeletePhotoCarousel(IndexPage indexPage);
+        IQueryable<Description> Descriptions { get; }
+        void SaveIndexPage(Description description);
+
+        IQueryable<Contact> Contacts { get; }
+        void SaveContacts(Contact contact);
 
         IQueryable<Image> Images { get; }
         void SavePhotoCarousel(Image image);

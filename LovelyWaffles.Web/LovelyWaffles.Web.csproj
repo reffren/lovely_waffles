@@ -173,11 +173,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Models\IndexModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -194,6 +196,9 @@
     <Content Include="Views\Shared\_CarouselTop.cshtml" />
     <Content Include="Views\Shared\_CarouselDown.cshtml" />
     <Content Include="Views\Shared\_Info.cshtml" />
+    <Content Include="Views\Admin\EditText.cshtml" />
+    <Content Include="Views\Contact\Contacts.cshtml" />
+    <Content Include="Views\Admin\EditContacts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -203,6 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Contacts\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

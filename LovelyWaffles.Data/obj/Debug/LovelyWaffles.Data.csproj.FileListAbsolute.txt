@@ -18,7 +18,6 @@ c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.D
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\bin\ru\System.Web.Webpages.Razor.resources.dll
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\bin\ru\System.Web.Helpers.resources.dll
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\bin\ru\System.Web.Mvc.resources.dll
-c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.csprojResolveAssemblyReference.cache
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.dll
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.pdb
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\bin\LovelyWaffles.Data.dll.config
@@ -26,9 +25,6 @@ c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.D
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\bin\EntityFramework.SqlServer.dll
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\bin\EntityFramework.xml
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\bin\EntityFramework.SqlServer.xml
-C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.InitialCreate.resources
 C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.csproj.GenerateResource.Cache
-C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.AddTable.resources
-C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.ChangeDb.resources
-C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.AddHead.resources
-C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.AddDescription.resources
+C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.csprojResolveAssemblyReference.cache
+C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.RenameTable.resources

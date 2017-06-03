@@ -1,6 +1,6 @@
-﻿@model LovelyWaffles.Data.Entities.IndexPage
+﻿@model LovelyWaffles.Web.Models.IndexModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Редактировать фото главной страницы";
 }
 @Html.Partial("AdminMenu")
 
@@ -9,7 +9,7 @@
     {
         <div class="row">
             <input type="file" name="Image" class="col-md-3" />
-            <input type="submit" value="Cохранить изображение" class="col-md-3 col-md-offset-1 btn btn-success" />
+            <input type="submit" value="&darr; Загрузить изображение &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
         </div>
     }
 </div>
@@ -17,54 +17,100 @@
 @Html.Partial("_CarouselTop")
 
 <div class="container">
-    <div class="row">
+    <div class="row delete_photo">
         @foreach (var i in Model.Images)
         {
             <div>
                 @using (Html.BeginForm("EditImages", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-                    if (i.ImgCarouselTop != null) { 
-                    @Html.Hidden("ImageID", i.ImageID)
-                    <img src="@Url.Content(i.ImgCarouselTop)" class="img-responsive delete_photo" />
-                    <input type="submit" class="btn btn-danger btn_delete_photo" value="Удалить фото">
+                    if (i.ImgCarouselTop != null)
+                    {
+                        <img src="@Url.Content(i.ImgCarouselTop)" class="img-responsive" />
+                        <input type="submit" class="btn btn-danger" value="Удалить фото">
                     }
                 }
             </div>
         }
     </div>
 </div>
-<div class="row">
-    @foreach (var i in Model.Images)
+
+<div class="container add_photo">
+    @using (Html.BeginForm("EditPhotoMainPage", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inline" }))
     {
-                using (Html.BeginForm("EditImages", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                {
-                    if (i.Pictures != null) { 
-                    @Html.Hidden("ImageID", i.ImageID)
-                    <div class="col-md-4">
-                      <img src="@Url.Content(i.Pictures)" class="img-responsive" />
-                      <input type="submit" class="btn btn-danger btn_delete_photo" value="Удалить фото">
-                    </div>
-                    }
-                }
+        <div class="row">
+            <input type="file" name="Image" class="col-md-3" />
+            <input type="submit" value="&darr; Загрузить изображение &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
+        </div>
     }
 </div>
 
-@Html.Partial("_CarouselDown")
+<div class="row edit_pic">
+    @foreach (var i in Model.Images)
+    {
+        using (Html.BeginForm("EditImages", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            if (i.Pictures != null)
+            {
+                @Html.Hidden("ImageID", i)
+                <div class="col-md-4">
+                    <img src="@Url.Content(i.Pictures)" class="img-responsive" />
+                    <input type="submit" class="btn btn-danger" value="Удалить фото">
+                </div>
+            }
+        }
+    }
+</div>
+
+<div class="container">
+    @using (Html.BeginForm("EditPhotoMainPage", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inline" }))
+    {
+        <div class="row">
+            <input type="file" name="Image" class="col-md-3" />
+            <input type="submit" value="&darr; Обновить изображение &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
+        </div>
+    }
+</div>
 
 <div class="container">
     <div class="row">
-        @foreach (var i in Model.Images)
+        @using (Html.BeginForm("EditImages", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            <div>
-                @using (Html.BeginForm("EditImages", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                {
-                    if (i.ImgCarouselDown != null) { 
-                    @Html.Hidden("PhotoMainID", i.ImgCarouselDown)
-                    <img src="@Url.Content(i.ImgCarouselDown)" class="img-responsive delete_photo" />
-                    <input type="submit" class="btn btn-danger btn_delete_photo" value="Удалить фото">
-                    }
-                }
-            </div>
+            foreach (var i in Model.Images) { 
+            if (i.Picture != null)
+            {
+                <img src="@Url.Content(i.Picture)" class="img-responsive" />
+            }
+            }
         }
     </div>
 </div>
+
+<div class="container add_photo">
+    @using (Html.BeginForm("EditPhotoMainPage", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inline" }))
+    {
+        <div class="row">
+            <input type="file" name="Image" class="col-md-3" />
+            <input type="submit" value="&darr; Загрузить изображение &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
+        </div>
+    }
+</div>
+
+    @Html.Partial("_CarouselDown")
+
+    <div class="container">
+        <div class="row delete_photo">
+            @foreach (var i in Model.Images)
+            {
+                <div>
+                    @using (Html.BeginForm("EditImages", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        if (i.ImgCarouselDown != null)
+                        {
+                            <img src="@Url.Content(i.ImgCarouselDown)" class="img-responsive" />
+                            <input type="submit" class="btn btn-danger" value="Удалить фото">
+                        }
+                    }
+                </div>
+            }
+        </div>
+    </div>

@@ -127,6 +127,22 @@ ul.admin_menu li {
     margin-bottom: 30px;
 }
 
+/*INDEX*/
+.delete_photo {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+.edit_pic {
+    padding-bottom: 50px;
+}
+/*EditText*/
+.wide {
+    width: 600px;
+}
+.center {
+    text-align: center;
+}
+
 footer {
     background-color: #401F18;
     text-align: center;

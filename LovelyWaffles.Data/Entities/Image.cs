@@ -12,6 +12,7 @@ namespace LovelyWaffles.Data.Entities
         public int ImageID { get; set; }
         public string ImgCarouselTop { get; set; }
         public string Pictures { get; set; }
+        public string Picture { get; set; }
         public string ImgCarouselDown { get; set; }
     }
 }

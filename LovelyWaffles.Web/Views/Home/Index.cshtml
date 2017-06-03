@@ -1,4 +1,5 @@
-﻿@model LovelyWaffles.Data.Entities.IndexPage
+﻿@model LovelyWaffles.Web.Models.IndexModel
+
 @{
     ViewBag.Title = "Index";
 }
@@ -7,9 +8,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-offset-1 col-md-6 home_descript">
-            <h2 class="home_h2">@Model.HeadDescription1</h2>
+            <h2 class="home_h2">@Model.Description.HeadDescription1</h2>
             <p class="home_text">
-                @Model.Description1
+                @Model.Description.Description1
             </p>
         </div>
     </div>
@@ -23,20 +24,25 @@
     </div>
     <div class="row">
         <div class="col-md-offset-1 col-md-6 home_descript">
-            <h2 class="home_h2">@Model.HeadDescription2</h2>
+            <h2 class="home_h2">@Model.Description.HeadDescription2</h2>
             <p class="home_text">
-                @Model.Description2
+                @Model.Description.Description2
             </p>
         </div>
     </div>
     <div class="row">
-        <img src="@Url.Content(Model.Picture)" class="img-responsive" />
+        @foreach (var i in Model.Images)
+        {
+            if (i.Picture != null) { 
+            <img src="@Url.Content(i.Picture)" class="img-responsive" />
+            }
+        }
     </div>
     <div class="row">
         <div class="col-md-offset-1 col-md-6 home_descript">
-            <h2 class="home_h2">@Model.HeadDescription3</h2>
+            <h2 class="home_h2">@Model.Description.HeadDescription3</h2>
             <p class="home_text">
-                @Model.Description3
+                @Model.Description.Description3
             </p>
         </div>
     </div>
@@ -45,9 +51,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-offset-1 col-md-6 home_descript">
-            <h2 class="home_h2">@Model.HeadDescription4</h2>
+            <h2 class="home_h2">@Model.Description.HeadDescription4</h2>
             <p class="home_text">
-                @Model.Description4
+                @Model.Description.Description4
             </p>
         </div>
     </div>
