@@ -208,6 +208,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\CarouselDownImages\" />
+    <Folder Include="Content\CarouselTopImages\" />
     <Folder Include="Views\Contacts\" />
   </ItemGroup>
   <ItemGroup>

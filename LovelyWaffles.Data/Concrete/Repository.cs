@@ -17,7 +17,7 @@ namespace LovelyWaffles.Data.Concrete
             get { return context.Descriptions; }
         }
 
-        public void SaveIndexPage(Description description)
+        public void SaveDescription(Description description)
         {
             if (description.DescriptionID != 0)
             {
@@ -45,7 +45,7 @@ namespace LovelyWaffles.Data.Concrete
             get { return context.Images; }
         }
 
-        public void SavePhotoCarousel(Image image)
+        public void SaveImage(Image image)
         {
             if (image.ImageID == 0)
             {

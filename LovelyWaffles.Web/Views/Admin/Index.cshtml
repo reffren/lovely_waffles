@@ -5,7 +5,7 @@
 @Html.Partial("AdminMenu")
 
 <div class="container add_photo">
-    @using (Html.BeginForm("EditPhotoMainPage", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inline" }))
+    @using (Html.BeginForm("EditCarouselTop", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inline" }))
     {
         <div class="row">
             <input type="file" name="Image" class="col-md-3" />
@@ -21,10 +21,11 @@
         @foreach (var i in Model.Images)
         {
             <div>
-                @using (Html.BeginForm("EditImages", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("EditCarouselTop", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     if (i.ImgCarouselTop != null)
                     {
+                        @Html.HiddenFor(m => m.id, new { @Value = i.ImageID })
                         <img src="@Url.Content(i.ImgCarouselTop)" class="img-responsive" />
                         <input type="submit" class="btn btn-danger" value="Удалить фото">
                     }

@@ -10,5 +10,6 @@ namespace LovelyWaffles.Web.Models
     {
         public Description Description { get; set; }
         public IEnumerable<Image> Images { get; set; }
+        public int id { get; set; } //for admin panel
     }
 }

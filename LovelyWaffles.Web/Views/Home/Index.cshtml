@@ -17,9 +17,11 @@
     <div class="row">
         @foreach (var i in Model.Images)
         {
+            if (i.Pictures != null) { 
         <div class="col-md-4">
             <img src="@Url.Content(i.Pictures)" class="img-responsive" />
         </div>
+            }
         }
     </div>
     <div class="row">

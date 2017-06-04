@@ -10,13 +10,13 @@ namespace LovelyWaffles.Data.Abstract
     public interface IRepository
     {
         IQueryable<Description> Descriptions { get; }
-        void SaveIndexPage(Description description);
+        void SaveDescription(Description description);
 
         IQueryable<Contact> Contacts { get; }
         void SaveContacts(Contact contact);
 
         IQueryable<Image> Images { get; }
-        void SavePhotoCarousel(Image image);
+        void SaveImage(Image image);
         void DeletePhotoCarousel(Image image);
 
         IQueryable<PhotoGallery> PhotoGalleries { get; }

@@ -3,6 +3,7 @@ using LovelyWaffles.Data.Entities;
 using LovelyWaffles.Web.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -15,6 +16,7 @@ namespace LovelyWaffles.Web.Controllers
     {
         private IRepository _repository;
         private IndexModel indexModel;
+        private Image imageModel;
 
         public AdminController(IRepository repository)
         {
@@ -31,6 +33,43 @@ namespace LovelyWaffles.Web.Controllers
             return View(indexModel);
         }
 
+        [HttpPost]
+        public ActionResult EditCarouselTop([DefaultValue(0)]int id, HttpPostedFileBase image)
+        {
+            if (ModelState.IsValid)
+            {
+                imageModel = new Image();
+                //delete a image
+                if (id != 0)
+                {
+                    imageModel = _repository.Images.FirstOrDefault(f => f.ImageID == id);
+                    string fullPath = Request.MapPath(imageModel.ImgCarouselTop); //delete from server
+                    if (System.IO.File.Exists(fullPath))
+                    {
+                        System.IO.File.Delete(fullPath);
+                    }
+                    imageModel.ImgCarouselTop = null;
+                    _repository.SaveImage(imageModel);
+                }
+                // upload a image
+                int count = _repository.Images.Where(w => w.ImgCarouselTop != null).Select(s => s.ImgCarouselTop).Count(); // we must have maximum 6 records in "ImgCarousel" column
+                 if (image != null && image.ContentLength > 0 && count < 7)
+                {
+                    string imgName = SaveImage(image, "~/Content/CarouselTopImages/");
+                    var imageData = _repository.Images.FirstOrDefault(f => f.ImgCarouselTop == null); //update record where "ImgCarouselTop" column = NULL
+                    if (imageData != null)
+                        imageModel = imageData;
+                    imageModel.ImgCarouselTop = "~/Content/CarouselTopImages/" + imgName; //if the record doesn't have NULL, we are create new record (but not more than 6 records)
+                    if(imgName !=null)
+                    _repository.SaveImage(imageModel);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+            }
+            return RedirectToAction("Index", "Admin");
+        }
         public ActionResult EditPhotoGallery()
         {
             return View(_repository.PhotoGalleries.OrderByDescending(o=>o.PhotoID).ToList());
@@ -75,7 +114,7 @@ namespace LovelyWaffles.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                _repository.SaveIndexPage(model);
+                _repository.SaveDescription(model);
             }
             return View();
         }
@@ -132,6 +171,18 @@ namespace LovelyWaffles.Web.Controllers
             FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public string SaveImage(HttpPostedFileBase image, string nameImg)
+        {
+            if (image != null && image.ContentLength > 0)
+            {
+                var imgName = Path.GetFileName(image.FileName);
+                var path = Path.Combine(Server.MapPath(nameImg), System.IO.Path.GetFileName(image.FileName));
+                image.SaveAs(path);
+                return imgName;
+            }
+            return null;
         }
 	}
 }
