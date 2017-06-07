@@ -1,0 +1,13 @@
+﻿@{
+    Layout = null;
+}
+<div class="container">
+    <div class="row">
+        <ul class="admin_menu">
+            <li>@Html.ActionLink("Редактировать изображения", "Index", "Admin", null, new { @class = "btn btn-primary" })</li>
+            <li>@Html.ActionLink("Редактировать описание", "EditText", "Admin", null, new { @class = "btn btn-primary" })</li>
+            <li>@Html.ActionLink("Редактировать контакты", "EditContacts", "Admin", null, new { @class = "btn btn-primary" })</li>
+            <li>@Html.ActionLink("Фото галереи", "EditPhotoGallery", "Admin", null, new { @class = "btn btn-primary" })</li>
+        </ul>
+    </div>
+</div>

@@ -39,29 +39,26 @@ namespace LovelyWaffles.Web.Controllers
             if (ModelState.IsValid)
             {
                 imageModel = new Image();
-                //delete a image
+                //delete an image
                 if (id != 0)
                 {
                     imageModel = _repository.Images.FirstOrDefault(f => f.ImageID == id);
                     string fullPath = Request.MapPath(imageModel.ImgCarouselTop); //delete from server
-                    if (System.IO.File.Exists(fullPath))
-                    {
-                        System.IO.File.Delete(fullPath);
-                    }
+                    DeleteImage(fullPath);
                     imageModel.ImgCarouselTop = null;
                     _repository.SaveImage(imageModel);
                 }
-                // upload a image
+                //upload an image
                 int count = _repository.Images.Where(w => w.ImgCarouselTop != null).Select(s => s.ImgCarouselTop).Count(); // we must have maximum 6 records in "ImgCarousel" column
-                 if (image != null && image.ContentLength > 0 && count < 7)
+                if (image != null && image.ContentLength > 0 && count < 7)
                 {
                     string imgName = SaveImage(image, "~/Content/CarouselTopImages/");
                     var imageData = _repository.Images.FirstOrDefault(f => f.ImgCarouselTop == null); //update record where "ImgCarouselTop" column = NULL
                     if (imageData != null)
                         imageModel = imageData;
                     imageModel.ImgCarouselTop = "~/Content/CarouselTopImages/" + imgName; //if the record doesn't have NULL, we are create new record (but not more than 6 records)
-                    if(imgName !=null)
-                    _repository.SaveImage(imageModel);
+                    if (imgName != null)
+                        _repository.SaveImage(imageModel);
                 }
                 else
                 {
@@ -70,9 +67,100 @@ namespace LovelyWaffles.Web.Controllers
             }
             return RedirectToAction("Index", "Admin");
         }
+
+        public ActionResult Edit3Pic([DefaultValue(0)]int id, HttpPostedFileBase image)
+        {
+            if (ModelState.IsValid)
+            {
+                imageModel = new Image();
+                //delete an image
+                if (id != 0)
+                {
+                    imageModel = _repository.Images.FirstOrDefault(f => f.ImageID == id);
+                    string fullPath = Request.MapPath(imageModel.Pictures); //delete from server
+                    DeleteImage(fullPath);
+                    imageModel.Pictures = null;
+                    _repository.SaveImage(imageModel);
+                }
+
+                //upload an image
+                int count = _repository.Images.Where(w => w.Pictures != null).Select(s => s.Pictures).Count(); // we must have maximum 6 records in "ImgCarousel" column
+                if (image != null && image.ContentLength > 0 && count < 3)
+                {
+                    string imgName = SaveImage(image, "~/Content/3pic/");
+                    var imageData = _repository.Images.FirstOrDefault(f => f.Pictures == null); //update record where "ImgCarouselTop" column = NULL
+                    if (imageData != null)
+                        imageModel = imageData;
+                    imageModel.Pictures = "~/Content/3pic/" + imgName; //if the record doesn't have NULL, we are create new record (but not more than 6 records)
+                    if (imgName != null)
+                        _repository.SaveImage(imageModel);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+            }
+            return RedirectToAction("Index", "Admin");
+        }
+
+        [HttpPost]
+        public ActionResult Edit1Pic(HttpPostedFileBase image)
+        {
+            if (ModelState.IsValid)
+            {
+                imageModel = new Image();
+                //delete an image
+                imageModel = _repository.Images.FirstOrDefault(f=>f.Picture != null);
+                string fullPath = Request.MapPath(imageModel.Picture);
+                DeleteImage(fullPath);
+                //upload an image
+
+                    string imgName = SaveImage(image, "~/Content/1pic/");
+                    imageModel.Picture = "~/Content/1pic/" + imgName;
+                    if (imgName != null)
+                    _repository.SaveImage(imageModel);
+            }
+            return RedirectToAction("Index", "Admin");
+        }
         public ActionResult EditPhotoGallery()
         {
-            return View(_repository.PhotoGalleries.OrderByDescending(o=>o.PhotoID).ToList());
+            return View(_repository.PhotoGalleries.OrderByDescending(o => o.PhotoID).ToList());
+        }
+
+        [HttpPost]
+        public ActionResult EditCarouselDown([DefaultValue(0)]int id, HttpPostedFileBase image)
+        {
+            if (ModelState.IsValid)
+            {
+                imageModel = new Image();
+                //delete an image
+                if (id != 0)
+                {
+                    imageModel = _repository.Images.FirstOrDefault(f => f.ImageID == id);
+                    string fullPath = Request.MapPath(imageModel.ImgCarouselDown); //delete from server
+                    DeleteImage(fullPath);
+                    imageModel.ImgCarouselDown = null;
+                    _repository.SaveImage(imageModel);
+                }
+
+                //upload an image
+                int count = _repository.Images.Where(w => w.ImgCarouselDown != null).Select(s => s.ImgCarouselDown).Count(); // we must have maximum 6 records in "ImgCarousel" column
+                if (image != null && image.ContentLength > 0 && count < 7)
+                {
+                    string imgName = SaveImage(image, "~/Content/CarouselDownImages/");
+                    var imageData = _repository.Images.FirstOrDefault(f => f.ImgCarouselDown == null); //update record where "ImgCarouselTop" column = NULL
+                    if (imageData != null)
+                        imageModel = imageData;
+                    imageModel.ImgCarouselDown = "~/Content/CarouselDownImages/" + imgName; //if the record doesn't have NULL, we are create new record (but not more than 6 records)
+                    if (imgName != null)
+                        _repository.SaveImage(imageModel);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+            }
+            return RedirectToAction("Index", "Admin");
         }
 
         [HttpPost]
@@ -184,5 +272,13 @@ namespace LovelyWaffles.Web.Controllers
             }
             return null;
         }
-	}
+
+        public void DeleteImage(string fullPath)
+        {
+                if (System.IO.File.Exists(fullPath))
+                {
+                    System.IO.File.Delete(fullPath);
+                }
+        }
+    }
 }

@@ -91,13 +91,7 @@
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\Description.cs" />
     <Compile Include="Entities\Image.cs" />
-    <Compile Include="Entities\Information.cs" />
     <Compile Include="Entities\PhotoGallery.cs" />
-    <Compile Include="Migrations\201706031830125_RenameTable.cs" />
-    <Compile Include="Migrations\201706031830125_RenameTable.Designer.cs">
-      <DependentUpon>201706031830125_RenameTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -110,11 +104,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706031830125_RenameTable.resx">
-      <DependentUpon>201706031830125_RenameTable.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

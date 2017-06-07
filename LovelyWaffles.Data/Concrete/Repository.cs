@@ -19,11 +19,15 @@ namespace LovelyWaffles.Data.Concrete
 
         public void SaveDescription(Description description)
         {
-            if (description.DescriptionID != 0)
+            if (description.DescriptionID == 0)
+            {
+                context.Descriptions.Add(description);
+            }
+            else
             {
                 context.Entry(description).State = EntityState.Modified;
-                context.SaveChanges();
             }
+            context.SaveChanges();
         }
 
         public IQueryable<Contact> Contacts
@@ -33,11 +37,15 @@ namespace LovelyWaffles.Data.Concrete
 
         public void SaveContacts(Contact contact)
         {
-            if (contact.ContactID != 0)
+            if (contact.ContactID == 0)
+            {
+                context.Contacts.Add(contact);
+            }
+            else
             {
                 context.Entry(contact).State = EntityState.Modified;
-                context.SaveChanges();
             }
+            context.SaveChanges();
         }
 
         public IQueryable<Image> Images

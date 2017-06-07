@@ -1,0 +1,27 @@
+﻿@model LovelyWaffles.Web.Models.IndexModel
+<section class="carousel">
+    <div id="carousel_top" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            @{
+                var s = 0;
+                foreach (var i in Model.Images)
+                {
+                    if (i.ImgCarouselTop != null) { 
+                    var itemClass = s++ == 0 ? "item active" : "item";
+                    <div class="@itemClass">
+                        <img class="img_width" src="@Url.Content(i.ImgCarouselTop)">
+                    </div>
+                    }
+                }
+            }
+        </div>
+
+        <!-- Controls1 -->
+        <a class="left carousel-control" href="#carousel_top" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel_top" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div> <!-- Carousel1 -->
+</section>

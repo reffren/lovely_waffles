@@ -114,10 +114,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\CarouselImages\1.jpg" />
     <Content Include="Content\GalleryStyle\fancybox.css" />
     <Content Include="Content\Images\2.jpg" />
-    <Content Include="Content\Images\pic4.jpg" />
     <Content Include="Content\GalleryStyle\blank.gif" />
     <Content Include="Content\GalleryStyle\fancybox_loading%402x.gif" />
     <Content Include="Content\GalleryStyle\fancybox_loading.gif" />
@@ -127,7 +125,6 @@
     <Content Include="Content\Images\inst.png" />
     <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Images\logo.png" />
-    <Content Include="Content\GalleryPhoto\1.jpg" />
     <Content Include="Content\GalleryPhoto\2.jpg" />
     <Content Include="Content\GalleryPhoto\3.jpg" />
     <Content Include="Content\GalleryPhoto\4.jpg" />
@@ -195,7 +192,6 @@
     <Content Include="Views\Admin\EditPhotoGallery.cshtml" />
     <Content Include="Views\Shared\_CarouselTop.cshtml" />
     <Content Include="Views\Shared\_CarouselDown.cshtml" />
-    <Content Include="Views\Shared\_Info.cshtml" />
     <Content Include="Views\Admin\EditText.cshtml" />
     <Content Include="Views\Contact\Contacts.cshtml" />
     <Content Include="Views\Admin\EditContacts.cshtml" />
@@ -208,6 +204,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\1pic\" />
+    <Folder Include="Content\3pic\" />
     <Folder Include="Content\CarouselDownImages\" />
     <Folder Include="Content\CarouselTopImages\" />
     <Folder Include="Views\Contacts\" />

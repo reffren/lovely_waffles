@@ -4,9 +4,11 @@
         <div class="col-md-6">
             <ul class="inform">
                 <li><h2>НАШИ КОНТАКТЫ</h2></li>
+                @if(Model != null) {
                 <li><strong>Наш адрес: </strong>@Model.Address</li>
                 <li><strong>Наш телефон: </strong>@Model.Phone</li>
                 <li><strong>e-mail: </strong>@Model.Email</li>
+                }
             </ul>
         </div>
         <div class="col-md-4 col-md-offset-2 ">

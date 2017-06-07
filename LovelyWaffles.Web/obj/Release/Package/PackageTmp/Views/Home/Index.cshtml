@@ -1,113 +1,61 @@
-﻿@model IEnumerable<LovelyWaffles.Data.Entities.PhotoCarousel>
+﻿@model LovelyWaffles.Web.Models.IndexModel
+
 @{
     ViewBag.Title = "Index";
 }
 
-<section class="carousel">
-    <div id="carousel_top" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            @{
-                var i = 0;
-                foreach (var p in Model)
-                {
-                    var itemClass = i++ == 0 ? "item active" : "item";
-                    <div class="@itemClass">
-                        <img class="img_width" src="@Url.Content(p.Photo)" alt="@p.PhotoName">
-                        <div class="carousel-caption">
-                            <h3>@p.PhotoName</h3>
-                        </div>
-                    </div>
-                }
-            }
-        </div>
-
-        <!-- Controls1 -->
-        <a class="left carousel-control" href="#carousel_top" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel_top" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-    </div> <!-- Carousel1 -->
-</section>
+@Html.Partial("_CarouselTop")
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-offset-1 col-md-6 home_descript">
-            <h2 class="home_h2">Почему Lovely Вафли?</h2>
+            <h2 class="home_h2">@Model.Description.HeadDescription1</h2>
             <p class="home_text">
-                Cостоят из 30 шариков-ячеек, куда кладется начинка.
-                Это может быть Snickers, M&M`s, яблоко-корица и т. д.
-                Сверху мороженое или взбитые сливки с Ferrero rocher.
+                @Model.Description.Description1
             </p>
         </div>
     </div>
     <div class="row">
+        @foreach (var i in Model.Images)
+        {
+            if (i.Pictures != null) { 
         <div class="col-md-4">
-            <img src="~/Content/Images/2.jpg" class="img-responsive" />
+            <img src="@Url.Content(i.Pictures)" class="img-responsive" />
         </div>
-        <div class="col-md-4">
-            <img src="~/Content/Images/2.jpg" class="img-responsive" />
-        </div>
-        <div class="col-md-4">
-            <img src="~/Content/Images/2.jpg" class="img-responsive" />
-        </div>
+            }
+        }
     </div>
     <div class="row">
         <div class="col-md-offset-1 col-md-6 home_descript">
-            <h2 class="home_h2">Наше меню!</h2>
+            <h2 class="home_h2">@Model.Description.HeadDescription2</h2>
             <p class="home_text">
-                Собери свою Гонконгскую вафлю или выбери уже готовую.
+                @Model.Description.Description2
             </p>
         </div>
     </div>
     <div class="row">
-        <img src="~/Content/Images/34.jpg" class="img-responsive" />
+        @foreach (var i in Model.Images)
+        {
+            if (i.Picture != null) { 
+            <img src="@Url.Content(i.Picture)" class="img-responsive" />
+            }
+        }
     </div>
     <div class="row">
         <div class="col-md-offset-1 col-md-6 home_descript">
-            <h2 class="home_h2">В чем уникальность наших вафель?</h2>
+            <h2 class="home_h2">@Model.Description.HeadDescription3</h2>
             <p class="home_text">
-                это сеть уникальных заведений, специализирующихся на продаже свежеиспеченных гонконг-
-                ских вафель. Каждая вафля Snickers, Bounty, M&M’s, Маршмэллоу состоит из 32 шариков с любимой начинкой внутри каждого.
+                @Model.Description.Description3
             </p>
         </div>
     </div>
 </div>
-<section class="carousel">
-    <div id="carousel_top" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            @{
-                var s = 0;
-                foreach (var p in Model)
-                {
-                    var itemClass = s++ == 0 ? "item active" : "item";
-                    <div class="@itemClass">
-                        <img class="img_width" src="@Url.Content(p.Photo)" alt="@p.PhotoName">
-                        <div class="carousel-caption">
-                            <h3>@p.PhotoName</h3>
-                        </div>
-                    </div>
-                }
-            }
-        </div>
-
-        <!-- Controls1 -->
-        <a class="left carousel-control" href="#carousel_top" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel_top" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-    </div> <!-- Carousel1 -->
-</section>
+@Html.Partial("_CarouselDown")
 <div class="container">
     <div class="row">
         <div class="col-md-offset-1 col-md-6 home_descript">
-            <h2 class="home_h2">Секрет неповторимого вкуса!</h2>
+            <h2 class="home_h2">@Model.Description.HeadDescription4</h2>
             <p class="home_text">
-                Особая уникальная рецептура приг-
-                отовления Bubble Waffle создается иск-
-                лючительно из натуральных и свежих ингредиентов.
+                @Model.Description.Description4
             </p>
         </div>
     </div>
