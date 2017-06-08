@@ -26,3 +26,5 @@ C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.D
 C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Release\LovelyWaffles.Data.csprojResolveAssemblyReference.cache
 C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Release\LovelyWaffles.Data.dll
 C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Release\LovelyWaffles.Data.pdb
+C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Release\LovelyWaffles.Data.Migrations.AddKey.resources
+C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Release\LovelyWaffles.Data.csproj.GenerateResource.Cache

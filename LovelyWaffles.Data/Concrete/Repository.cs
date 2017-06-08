@@ -77,7 +77,7 @@ namespace LovelyWaffles.Data.Concrete
             get { return context.PhotoGalleries; }
         }
 
-        public void SavePhoto(PhotoGallery photo)
+        public void SavePhotoGallery(PhotoGallery photo)
         {
             if (photo.PhotoID == 0)
             {
@@ -90,7 +90,7 @@ namespace LovelyWaffles.Data.Concrete
             context.SaveChanges();
         }
 
-        public void DeletePhoto(PhotoGallery photo)
+        public void DeletePhotoGallery(PhotoGallery photo)
         {
             context.Entry(photo).State = EntityState.Deleted;
             context.SaveChanges();

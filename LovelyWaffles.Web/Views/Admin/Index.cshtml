@@ -7,9 +7,10 @@
 <div class="container add_photo">
     @using (Html.BeginForm("EditCarouselTop", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inline" }))
     {
+        <h3 class="message">@ViewBag.Message</h3>
         <div class="row">
             <input type="file" name="Image" class="col-md-3" />
-            <input type="submit" value="&darr; Загрузить изображение &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
+            <input type="submit" value="&darr; Загрузить изображение (макс.6) &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
         </div>
     }
 </div>
@@ -38,9 +39,10 @@
 <div class="container add_photo">
     @using (Html.BeginForm("Edit3Pic", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inline" }))
     {
+        <h3 class="message">@ViewBag.Message</h3>
         <div class="row">
             <input type="file" name="Image" class="col-md-3" />
-            <input type="submit" value="&darr; Загрузить изображение &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
+            <input type="submit" value="&darr; Загрузить изображение (макс.3) &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
         </div>
     }
 </div>
@@ -87,9 +89,10 @@
 <div class="container add_photo">
     @using (Html.BeginForm("EditCarouselDown", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inline" }))
     {
+        <h3 class="message">@ViewBag.Message</h3>
         <div class="row">
             <input type="file" name="Image" class="col-md-3" />
-            <input type="submit" value="&darr; Загрузить изображение &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
+            <input type="submit" value="&darr; Загрузить изображение (макс.6) &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
         </div>
     }
 </div>

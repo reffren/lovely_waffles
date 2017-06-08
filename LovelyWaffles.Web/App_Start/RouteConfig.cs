@@ -13,6 +13,16 @@ namespace LovelyWaffles.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(null,
+            "gallery",
+            new { controller = "Home", action = "Gallery" }
+            );
+
+            routes.MapRoute(null,
+            "admin",
+            new { controller = "Admin", action = "Index" }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

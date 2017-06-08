@@ -32,7 +32,9 @@
 #logout li a{
     color: red;
 }
-
+.red_color {
+    color: red;
+}
 /*HomeController*/
 .home_descript {
     padding-top: 20px;
@@ -52,6 +54,9 @@
 }
 .img_gallery {
     padding-bottom: 30px;
+}
+.img_gallery p red_color {
+    color: red;
 }
 #loading p img {
 	margin-left: auto;
@@ -99,7 +104,7 @@ ul.menu li a:hover:before, ul.menu li a:focus:before, ul.menu li a:active:before
   left: 0;
   right: 0;
 }
-ul.menu li a:hover {
+ul.menu li a:hover, ul.menu li a:visited{
     color: #d6a604;
 }
 /*Admin*/

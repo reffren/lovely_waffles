@@ -26,3 +26,5 @@ c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.D
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\bin\EntityFramework.xml
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\bin\EntityFramework.SqlServer.xml
 C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.csprojResolveAssemblyReference.cache
+C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.Migrations.AddKey.resources
+C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Data\obj\Debug\LovelyWaffles.Data.csproj.GenerateResource.Cache

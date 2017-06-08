@@ -92,6 +92,11 @@
     <Compile Include="Entities\Description.cs" />
     <Compile Include="Entities\Image.cs" />
     <Compile Include="Entities\PhotoGallery.cs" />
+    <Compile Include="Migrations\201706080744263_AddKey.cs" />
+    <Compile Include="Migrations\201706080744263_AddKey.Designer.cs">
+      <DependentUpon>201706080744263_AddKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +109,11 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706080744263_AddKey.resx">
+      <DependentUpon>201706080744263_AddKey.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

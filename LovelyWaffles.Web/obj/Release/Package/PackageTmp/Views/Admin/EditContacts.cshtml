@@ -5,18 +5,22 @@
 }
 @Html.Partial("AdminMenu")
 
-@using (Html.BeginForm("EditContacts", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-inline" }))
+@using (Html.BeginForm("EditContacts", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="container">
+        @Html.ValidationSummary(true)
         <div class="row img_gallery">
             <h2>НАШИ КОНТАКТЫ</h2>
+
             <strong>Наш адрес</strong>
-            @Html.HiddenFor(m => m.ContactID)
-            <p>@Html.TextBoxFor(m => m.Address, new { @class = "wide" })</p>
+            @if (Model != null) { @Html.HiddenFor(m=>m.ContactID); }
+            <p>@Html.TextBoxFor(m => m.Address, new { @class = "wide" }) @Html.ValidationMessageFor(m => m.Address, null, new { @class = "red_color" })</p>
+
             <strong>Наш телефон</strong>
-            <p>@Html.TextBoxFor(m => m.Phone, new { @class = "wide" })</p>
+            <p>@Html.TextBoxFor(m => m.Phone, new { @class = "wide" }) @Html.ValidationMessageFor(m => m.Phone, null, new { @class = "red_color" })</p>           
+            
             <strong>e-mail</strong>
-            <p>@Html.TextBoxFor(m => m.Email, new { @class = "wide " })</p>
+            <p>@Html.TextBoxFor(m => m.Email, new { @class = "wide " }) @Html.ValidationMessageFor(m => m.Email, null, new { @class = "red_color" })</p>
         </div>
         <input type="submit" class="btn btn-success" value="Сохранить">
     </div>

@@ -10,8 +10,14 @@ namespace LovelyWaffles.Data.Entities
     {
         [Key]
         public int ContactID { get; set; }
+
+        [Required(ErrorMessage = "Не заполнено поле 'Адрес'")]
         public string Address { get; set; }
+
+        [Required(ErrorMessage = "Не заполнено поле 'Телефон'")]
         public string Phone { get; set; }
+
+        [Required(ErrorMessage = "Не заполнено поле 'Email'")]
         public string Email { get; set; }
     }
 }

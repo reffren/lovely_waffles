@@ -33,6 +33,11 @@ namespace LovelyWaffles.Web.Controllers
             return View(indexModel);
         }
 
+        public ActionResult EditPhotoGallery()
+        {
+            return View(_repository.PhotoGalleries.OrderByDescending(o => o.PhotoID).ToList());
+        }
+
         [HttpPost]
         public ActionResult EditCarouselTop([DefaultValue(0)]int id, HttpPostedFileBase image)
         {
@@ -62,7 +67,7 @@ namespace LovelyWaffles.Web.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Admin");
+                    ViewBag.Message = "Вы можете загрузить не более 6-ти картинок";
                 }
             }
             return RedirectToAction("Index", "Admin");
@@ -97,7 +102,7 @@ namespace LovelyWaffles.Web.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Admin");
+                    ViewBag.Message = "Вы можете загрузить не более 3-х картинок";
                 }
             }
             return RedirectToAction("Index", "Admin");
@@ -108,23 +113,27 @@ namespace LovelyWaffles.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                imageModel = new Image();
-                //delete an image
-                imageModel = _repository.Images.FirstOrDefault(f=>f.Picture != null);
-                string fullPath = Request.MapPath(imageModel.Picture);
-                DeleteImage(fullPath);
-                //upload an image
-
+                if (image != null && image.ContentLength > 0)
+                {
+                    Image image1pic = new Image();
+                    //delete an image
+                    image1pic = _repository.Images.FirstOrDefault(f => f.Picture != null);
+                    if (image1pic != null)
+                    {
+                        string fullPath = Request.MapPath(imageModel.Picture);
+                        DeleteImage(fullPath);
+                    }
+                    else
+                    {
+                        image1pic = _repository.Images.FirstOrDefault(f => f.Picture == null);
+                    }
+                    //upload an image
                     string imgName = SaveImage(image, "~/Content/1pic/");
-                    imageModel.Picture = "~/Content/1pic/" + imgName;
-                    if (imgName != null)
-                    _repository.SaveImage(imageModel);
+                    image1pic.Picture = "~/Content/1pic/" + imgName;
+                    _repository.SaveImage(image1pic);
+                }
             }
             return RedirectToAction("Index", "Admin");
-        }
-        public ActionResult EditPhotoGallery()
-        {
-            return View(_repository.PhotoGalleries.OrderByDescending(o => o.PhotoID).ToList());
         }
 
         [HttpPost]
@@ -157,35 +166,29 @@ namespace LovelyWaffles.Web.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Admin");
+                    ViewBag.Message = "Вы можете загрузить не более 6-ти картинок";
                 }
             }
             return RedirectToAction("Index", "Admin");
         }
 
         [HttpPost]
-        public ActionResult EditImages(PhotoGallery galley, HttpPostedFileBase image)
+        public ActionResult EditPhotoGallery(PhotoGallery galley, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
                 if (image != null && image.ContentLength > 0)
                 {
-                    var imgName = Path.GetFileName(image.FileName);
-                    var path = Path.Combine(Server.MapPath("~/Content/GalleryPhoto/"), System.IO.Path.GetFileName(image.FileName));
-                    image.SaveAs(path);
+                    string imgName = SaveImage(image, "~/Content/GalleryPhoto/");
                     galley.Photo = "~/Content/GalleryPhoto/" + imgName;
-                    _repository.SavePhoto(galley);
+                    _repository.SavePhotoGallery(galley);
                 }
                 else if (galley.PhotoID != 0)
                 {
                     galley = _repository.PhotoGalleries.FirstOrDefault(f => f.PhotoID == galley.PhotoID);
-
                     string fullPath = Request.MapPath(galley.Photo); //delete from server
-                    if (System.IO.File.Exists(fullPath))
-                    {
-                        System.IO.File.Delete(fullPath);
-                    }
-                    _repository.DeletePhoto(galley);
+                    DeleteImage(fullPath);
+                    _repository.DeletePhotoGallery(galley);
                 }
             }
             return RedirectToAction("EditPhotoGallery", "Admin");
@@ -204,7 +207,11 @@ namespace LovelyWaffles.Web.Controllers
             {
                 _repository.SaveDescription(model);
             }
-            return View();
+            else
+            {
+                return View();
+            }
+            return RedirectToAction("EditText", "admin");
         }
 
         [Authorize]
@@ -220,7 +227,11 @@ namespace LovelyWaffles.Web.Controllers
             {
                 _repository.SaveContacts(contact);
             }
-            return View();
+            else
+            {
+                return View();
+            }
+            return RedirectToAction("EditContacts", "admin");
         }
 
         [AllowAnonymous]
@@ -263,22 +274,19 @@ namespace LovelyWaffles.Web.Controllers
 
         public string SaveImage(HttpPostedFileBase image, string nameImg)
         {
-            if (image != null && image.ContentLength > 0)
-            {
-                var imgName = Path.GetFileName(image.FileName);
-                var path = Path.Combine(Server.MapPath(nameImg), System.IO.Path.GetFileName(image.FileName));
-                image.SaveAs(path);
-                return imgName;
-            }
-            return null;
+            var imgName = Path.GetFileName(image.FileName);
+            var path = Path.Combine(Server.MapPath(nameImg), System.IO.Path.GetFileName(image.FileName));
+            image.SaveAs(path);
+
+            return imgName;
         }
 
         public void DeleteImage(string fullPath)
         {
-                if (System.IO.File.Exists(fullPath))
-                {
-                    System.IO.File.Delete(fullPath);
-                }
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+            }
         }
     }
 }

@@ -115,7 +115,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\GalleryStyle\fancybox.css" />
-    <Content Include="Content\Images\2.jpg" />
     <Content Include="Content\GalleryStyle\blank.gif" />
     <Content Include="Content\GalleryStyle\fancybox_loading%402x.gif" />
     <Content Include="Content\GalleryStyle\fancybox_loading.gif" />
@@ -125,7 +124,6 @@
     <Content Include="Content\Images\inst.png" />
     <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Images\logo.png" />
-    <Content Include="Content\GalleryPhoto\2.jpg" />
     <Content Include="Content\GalleryPhoto\3.jpg" />
     <Content Include="Content\GalleryPhoto\4.jpg" />
     <Content Include="Content\GalleryPhoto\5.jpg" />
