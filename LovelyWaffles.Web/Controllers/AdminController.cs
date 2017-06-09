@@ -275,12 +275,11 @@ namespace LovelyWaffles.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public string SaveImage(HttpPostedFileBase image, string nameImg)
+        public string SaveImage(HttpPostedFileBase image, string imgRoute)
         {
-            var imgName = Path.GetFileName(image.FileName);
-            var path = Path.Combine(Server.MapPath(nameImg), System.IO.Path.GetFileName(image.FileName));
-            image.SaveAs(path);
-
+            int randomNumber = new Random().Next(0, 100);
+            string imgName = Convert.ToString(randomNumber) + System.IO.Path.GetFileName(image.FileName); // rename of uploaded Image to File system
+            image.SaveAs(Server.MapPath(imgRoute + imgName));
             return imgName;
         }
 
