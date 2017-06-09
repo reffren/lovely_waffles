@@ -115,22 +115,25 @@ namespace LovelyWaffles.Web.Controllers
             {
                 if (image != null && image.ContentLength > 0)
                 {
-                    Image image1pic = new Image();
+                    imageModel = new Image();
                     //delete an image
-                    image1pic = _repository.Images.FirstOrDefault(f => f.Picture != null);
-                    if (image1pic != null)
+                    var img = _repository.Images.FirstOrDefault(f => f.Picture != null);
+                    if (img != null)
                     {
+                        imageModel = img;  // if database is not empty
                         string fullPath = Request.MapPath(imageModel.Picture);
                         DeleteImage(fullPath);
                     }
                     else
                     {
-                        image1pic = _repository.Images.FirstOrDefault(f => f.Picture == null);
+                        var pic = _repository.Images.FirstOrDefault(f => f.Picture == null);
+                        if (pic != null)
+                            imageModel = pic; // if database is not empty
                     }
                     //upload an image
                     string imgName = SaveImage(image, "~/Content/1pic/");
-                    image1pic.Picture = "~/Content/1pic/" + imgName;
-                    _repository.SaveImage(image1pic);
+                    imageModel.Picture = "~/Content/1pic/" + imgName;
+                    _repository.SaveImage(imageModel);
                 }
             }
             return RedirectToAction("Index", "Admin");
