@@ -47,22 +47,24 @@
     }
 </div>
 
-<div class="row edit_pic">
-    @foreach (var i in Model.Images)
-    {
-        using (Html.BeginForm("Edit3Pic", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+<div class="container">
+    <div class="row edit_pic">
+        @foreach (var i in Model.Images)
         {
-            if (i.Pictures != null)
+            using (Html.BeginForm("Edit3Pic", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
-                @Html.Hidden("ImageID", i)
-                <div class="col-md-4">
-                    @Html.HiddenFor(m => m.id, new { @Value = i.ImageID })
-                    <img src="@Url.Content(i.Pictures)" class="img-responsive" />
-                    <input type="submit" class="btn btn-danger" value="Удалить фото">
-                </div>
+                if (i.Pictures != null)
+                {
+                    @Html.Hidden("ImageID", i)
+                    <div class="col-md-4">
+                        @Html.HiddenFor(m => m.id, new { @Value = i.ImageID })
+                        <img src="@Url.Content(i.Pictures)" class="img-responsive" />
+                        <input type="submit" class="btn btn-danger" value="Удалить фото">
+                    </div>
+                }
             }
         }
-    }
+    </div>
 </div>
 
 <div class="container">
