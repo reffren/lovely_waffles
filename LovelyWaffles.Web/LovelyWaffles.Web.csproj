@@ -121,6 +121,7 @@
     <Content Include="Content\GalleryStyle\fancybox_overlay.png" />
     <Content Include="Content\GalleryStyle\fancybox_sprite%402x.png" />
     <Content Include="Content\GalleryStyle\fancybox_sprite.png" />
+    <Content Include="Content\Images\error.png" />
     <Content Include="Content\Images\inst.png" />
     <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Images\logo.png" />
@@ -169,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ErrorHandlerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,6 +195,8 @@
     <Content Include="Views\Admin\EditText.cshtml" />
     <Content Include="Views\Contact\Contacts.cshtml" />
     <Content Include="Views\Admin\EditContacts.cshtml" />
+    <Content Include="Views\ErrorHandler\Index.cshtml" />
+    <Content Include="Views\ErrorHandler\NotFound.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

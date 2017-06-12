@@ -35,6 +35,13 @@
 .red_color {
     color: red;
 }
+.error_message {
+    text-align: center;
+    padding-bottom: 40px;
+}
+.error_message img {
+    display: inline;
+}
 /*HomeController*/
 .home_descript {
     padding-top: 20px;
