@@ -8,6 +8,7 @@
             <li>@Html.ActionLink("Редактировать описание", "EditText", "Admin", null, new { @class = "btn btn-primary" })</li>
             <li>@Html.ActionLink("Редактировать контакты", "EditContacts", "Admin", null, new { @class = "btn btn-primary" })</li>
             <li>@Html.ActionLink("Фото галереи", "EditPhotoGallery", "Admin", null, new { @class = "btn btn-primary" })</li>
+            <li><a href="@Url.Action(null, "elmah.axd")" class="btn btn-primary">Ошибки сайта</a></li>
         </ul>
     </div>
 </div>

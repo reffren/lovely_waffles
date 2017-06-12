@@ -38,3 +38,4 @@ C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.W
 C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Web\obj\Release\LovelyWaffles.Web.csprojResolveAssemblyReference.cache
 C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Web\obj\Release\LovelyWaffles.Web.dll
 C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Web\obj\Release\LovelyWaffles.Web.pdb
+C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Web\bin\Elmah.dll

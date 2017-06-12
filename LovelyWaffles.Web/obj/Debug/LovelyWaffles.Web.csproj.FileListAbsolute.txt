@@ -38,3 +38,4 @@ c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.W
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Web\bin\Newtonsoft.Json.xml
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Web\bin\Ninject.xml
 c:\users\tim\documents\visual studio 2013\Projects\LovelyWaffles\LovelyWaffles.Web\bin\System.Web.Optimization.xml
+C:\Users\Tim\Documents\Visual Studio 2013\Projects\LovelyWaffles\LovelyWaffles.Web\bin\Elmah.dll

@@ -24,7 +24,7 @@
                     <ul class="menu">
                         <li>@Html.ActionLink("МЕНЮ", "Index", "Home", null, new { @class = "nav_letter" })</li>
                         <li>@Html.ActionLink("ФОТО", "Gallery", "Home", null, new { @class = "nav_letter" })</li>
-                        <li>@Html.ActionLink("БЛОГ", "Service", "Home", null, new { @class = "nav_letter" })</li>
+                        @*<li>@Html.ActionLink("БЛОГ", "Service", "Home", null, new { @class = "nav_letter" })</li>*@
 
                         @if (Request.IsAuthenticated)
                         {
