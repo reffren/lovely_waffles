@@ -61,6 +61,7 @@
 }
 .img_gallery {
     padding-bottom: 30px;
+
 }
 .img_gallery p red_color {
     color: red;
@@ -165,4 +166,38 @@ footer p {
     padding-bottom: 20px;
     color: #FBBA00;
     padding-top: 40px;
+}
+
+@media only screen and (max-width : 770px) {
+
+.menu_btn {
+    color: #FBBA00;
+}
+.logo {
+    padding-left: 30px;
+    padding-bottom: 20px;
+    width: 120px;
+}
+.glyphicon {
+    font-size: 60px;
+}
+.my_navbar {
+    height: 100px;
+}
+.img_mob {
+    padding-top: 30px;
+}
+.mob_descript {
+    padding-bottom: 10px;
+}
+.home_descript { 
+    text-align: center;
+}
+
+/*Gallery*/
+.img_gallery {
+    display: block;
+    padding-bottom: 0px;
+    margin: auto;
+}
 }

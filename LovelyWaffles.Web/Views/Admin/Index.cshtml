@@ -58,7 +58,7 @@
                     @Html.Hidden("ImageID", i)
                     <div class="col-md-4">
                         @Html.HiddenFor(m => m.id, new { @Value = i.ImageID })
-                        <img src="@Url.Content(i.Pictures)" class="img-responsive" />
+                        <img src="@Url.Content(i.Pictures)" class="img-responsive img_mob" />
                         <input type="submit" class="btn btn-danger" value="Удалить фото">
                     </div>
                 }

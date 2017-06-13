@@ -9,7 +9,7 @@
         }
         <div>
             <a class="fancybox col-sm-4" rel="gallery1" href="@Url.Content(Model.ElementAt(i).Photo)" title=@Model.ElementAt(i).Title>
-                <img width="350" height="350" src="@Url.Content(Model.ElementAt(i).Photo)" class="img-responsive img_gallery" alt=" " />
+                <img src="@Url.Content(Model.ElementAt(i).Photo)" class="img-responsive img_gallery" alt=" " />
             </a>
         </div>
         if ((i + 1) % 3 == 0)

@@ -7,7 +7,7 @@
 @Html.Partial("_CarouselTop")
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-offset-1 col-md-6 home_descript">
+        <div class="col-md-offset-1 col-md-6 home_descript mob_descript">
             <h2 class="home_h2">@Model.Description.HeadDescription1</h2>
             <p class="home_text">
                 @Model.Description.Description1
@@ -19,7 +19,7 @@
         {
             if (i.Pictures != null) { 
         <div class="col-md-4">
-            <img src="@Url.Content(i.Pictures)" class="img-responsive" />
+            <img src="@Url.Content(i.Pictures)" class="img-responsive img_mob" />
         </div>
             }
         }
@@ -52,7 +52,7 @@
 @Html.Partial("_CarouselDown")
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-offset-1 col-md-6 home_descript">
+        <div class="col-md-offset-1 col-md-6 home_descript mob_descript">
             <h2 class="home_h2">@Model.Description.HeadDescription4</h2>
             <p class="home_text">
                 @Model.Description.Description4
