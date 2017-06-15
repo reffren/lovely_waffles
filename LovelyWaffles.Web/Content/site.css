@@ -1,6 +1,7 @@
 ﻿.my_navbar {
     background-color: #401F18;
     height: 150px;
+    margin-bottom: 140px;
 }
 
 .my_nav {
@@ -9,7 +10,7 @@
 }
 
 .logo {
-    padding-left: 30px;
+    padding-left: 15px;
     padding-bottom: 20px;
 }
 .menu {
@@ -19,13 +20,14 @@
 .nav_letter {
     font-size: x-large;
     text-decoration: none;
-    color: #FBBA00;
+    color: #FBBA00  !important;
 }
 .nav_exit {
     font-size: x-large;
     text-decoration: none;
     color: #FBBA00;
 }
+
 #logout {
    display: inline-block;
 }
@@ -42,6 +44,7 @@
 .error_message img {
     display: inline;
 }
+
 /*HomeController*/
 .home_descript {
     padding-top: 20px;
@@ -98,7 +101,7 @@ ul.menu li a:before {
     left: 50%;
     right: 50%;
     bottom: 0;
-    background: #d6a604;
+    background: #d6a604 !important;
     height: 2px;
     -webkit-transition-property: left, right;
     transition-property: left, right;
@@ -113,8 +116,9 @@ ul.menu li a:hover:before, ul.menu li a:focus:before, ul.menu li a:active:before
   right: 0;
 }
 ul.menu li a:hover, ul.menu li a:visited{
-    color: #d6a604;
+    color: #d6a604 !important 
 }
+
 /*Admin*/
 .entrance {
     width: 500px;
@@ -122,12 +126,12 @@ ul.menu li a:hover, ul.menu li a:visited{
 }
 /*AdminMenu*/
 
-ul.admin_menu {
+.admin_menu {
   left: 0;
   right: 0;
   padding-bottom: 40px;
 }
-ul.admin_menu li {
+.admin_menu li {
     display: inline-block;
 }
 /*EditPhotoGallery*/
@@ -168,21 +172,23 @@ footer p {
     padding-top: 40px;
 }
 
-@media only screen and (max-width : 770px) {
+@media only screen and (max-width : 943px) {
 
 .menu_btn {
     color: #FBBA00;
 }
 .logo {
     padding-left: 30px;
-    padding-bottom: 20px;
-    width: 120px;
+    padding-bottom: 0px;
+    width: 125px;
 }
+
 .glyphicon {
     font-size: 60px;
 }
 .my_navbar {
     height: 100px;
+    margin-bottom: 0px;
 }
 .img_mob {
     padding-top: 30px;
@@ -193,11 +199,58 @@ footer p {
 .home_descript { 
     text-align: center;
 }
+.mob_menu {
+    background-color: #401F18;
+    z-index: 1;
+}
+.menu {
+    float: none;
+    padding-top: 0px;
+}
+ul.menu li {
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+
+/*Carousel*/
+.mob_carousel {
+    padding-top: 1px;
+}
 
 /*Gallery*/
 .img_gallery {
     display: block;
     padding-bottom: 0px;
     margin: auto;
+}
+
+/*AdminPanel*/
+
+.admin_menu {
+    padding-bottom: 0px;
+}
+.admin_menu li{
+    padding-bottom: 5px;
+    padding-top: 20px;
+}
+.mob_btn {
+    margin-top: 20px;
+}
+.add_photo {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+/*EditPhotoGallery*/
+.mob_img {
+    padding-top: 20px;
+}
+}
+@media only screen and (max-width : 768px) {
+    .mob_menu {
+    position: relative;
 }
 }

@@ -8,7 +8,7 @@
     {
         <div class="row">
             <input type="file" name="Image" class="col-md-3" />
-            <input type="submit" value="Cохранить изображение" class="col-md-3 btn btn-success" />
+            <input type="submit" value="Cохранить изображение" class="col-md-3 btn btn-success mob_btn" />
         </div>
     }
 </div>
@@ -24,7 +24,7 @@
         }
         <div class="col-sm-4">
             @Html.Hidden("PhotoID", Model.ElementAt(i).PhotoID)
-            <img width="350" height="350" src="@Url.Content(Model.ElementAt(i).Photo)" class="img-responsive">
+            <img width="350" height="350" src="@Url.Content(Model.ElementAt(i).Photo)" class="img-responsive mob_img">
             <input type="submit" class="btn btn-danger" value="Удалить фото">
         </div>
             if ((i + 1) % 3 == 0)

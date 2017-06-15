@@ -10,7 +10,7 @@
         <h3 class="message">@ViewBag.Message</h3>
         <div class="row">
             <input type="file" name="Image" class="col-md-3" />
-            <input type="submit" value="&darr; Загрузить изображение (макс.6) &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
+            <input type="submit" value="&darr; Загрузить изображение (макс.6) &darr;" class="col-md-3 col-md-offset-1 btn btn-success mob_btn" />
         </div>
     }
 </div>
@@ -42,7 +42,7 @@
         <h3 class="message">@ViewBag.Message</h3>
         <div class="row">
             <input type="file" name="Image" class="col-md-3" />
-            <input type="submit" value="&darr; Загрузить изображение (макс.3) &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
+            <input type="submit" value="&darr; Загрузить изображение (макс.3) &darr;" class="col-md-3 col-md-offset-1 btn btn-success mob_btn" />
         </div>
     }
 </div>
@@ -58,7 +58,7 @@
                     @Html.Hidden("ImageID", i)
                     <div class="col-md-4">
                         @Html.HiddenFor(m => m.id, new { @Value = i.ImageID })
-                        <img src="@Url.Content(i.Pictures)" class="img-responsive" />
+                        <img src="@Url.Content(i.Pictures)" class="img-responsive img_mob" />
                         <input type="submit" class="btn btn-danger" value="Удалить фото">
                     </div>
                 }
@@ -72,7 +72,7 @@
     {
         <div class="row">
             <input type="file" name="Image" class="col-md-3" />
-            <input type="submit" value="&darr; Обновить изображение &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
+            <input type="submit" value="&darr; Обновить изображение &darr;" class="col-md-3 col-md-offset-1 btn btn-success mob_btn" />
         </div>
     }
 </div>
@@ -94,7 +94,7 @@
         <h3 class="message">@ViewBag.Message</h3>
         <div class="row">
             <input type="file" name="Image" class="col-md-3" />
-            <input type="submit" value="&darr; Загрузить изображение (макс.6) &darr;" class="col-md-3 col-md-offset-1 btn btn-success" />
+            <input type="submit" value="&darr; Загрузить изображение (макс.6) &darr;" class="col-md-3 col-md-offset-1 btn btn-success mob_btn" />
         </div>
     }
 </div>
